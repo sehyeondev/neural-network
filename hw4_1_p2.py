@@ -5,6 +5,7 @@ def Sigmoid(x):
     return 1/(1+np.exp(-x))
 
 np.random.seed(0)
+
 class Fully_Connected_Layer:
     def __init__(self, learning_rate):
         self.InputDim = 784
@@ -78,9 +79,6 @@ b_num = int(train_data.shape[0]/b_size)
 for _ in range(iteration):
     for i in range(b_num):
         Network.Train(train_data[b_size*i:b_size*(i+1),:], train_label[b_size*i:b_size*(i+1),:])
-
-# for _ in range(iteration):
-#     Network.Train(train_data, train_label)
 
 '''Implement function to measure the accuracy'''
 def Accuracy(Output, Label):
